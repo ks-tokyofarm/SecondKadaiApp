@@ -24,7 +24,12 @@ class ResultViewController: UIViewController {
         // 上記では name を ""と宣言していたが
         // 1画面目のViewControllerから遷移するときにPrepareForSegueで
         // nameの値を新たに代入されたので、入力された内容が入っている
-        label.text = "こんにちは、\(name)さん"
+        if ( name != "" ){      // 名前の入力があった？
+            label.text = "こんにちは、\(name)さん"
+        }
+        else {
+            label.text = "前の画面に戻り、名前を入力してください"
+        }
     }
     
     /*
